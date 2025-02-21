@@ -1,0 +1,9 @@
+@import 'tailwindcss';
+
+@theme{
+    --font-nunitoSans: nunito sans;
+    --shadow-ring: 0px 0px 6px rgba(0, 0, 0, 0.5);
+    --shadow-ring2: 0px 0px 3px rgba(0, 0, 0, 0.3);
+    --color-darkHeaderBg: hsl(209, 23%, 22%);
+    --color-darkBodyBg: hsl(207, 26%, 17%);
+}
