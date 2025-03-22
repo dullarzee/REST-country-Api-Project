@@ -18,6 +18,14 @@ function NoResultsFound({ lightMode }){
 
 function DefaultClickableThumbNail({ setExtraData, data, index, setShowMain, lightMode }) {
 
+    function handleKeyboard(e)
+    {
+        if(e.key === 'Enter' || e.key === ' ')
+        {
+            e.target.click()
+        }
+    }
+
     let popu = data[index]['population']
     let popu2 = [];
     let count = 0;
@@ -44,7 +52,7 @@ function DefaultClickableThumbNail({ setExtraData, data, index, setShowMain, lig
         scrollUp.click();
     }
     return (
-        <section onClick={handleSwitchingMain} key={data[index]['name']} className='cursor-pointer grid grid-cols-1 grid-rows-2 rounded-[7px] shadow-md h-[23rem]'>
+        <section tabIndex={0} onKeyUp={handleKeyboard} onClick={handleSwitchingMain} key={data[index]['name']} className='cursor-pointer grid grid-cols-1 grid-rows-2 rounded-[7px] shadow-md h-[23rem]'>
             <div className="rounded-tl-[7px] rounded-tr-[7px] shadow-sm z-10">
                 <img alt="country's flag" className="h-full w-full rounded-tl-[7px] rounded-tr-[7px]" src={data[index]['flags']['png']}></img>
             </div>
@@ -63,6 +71,13 @@ function DefaultClickableThumbNail({ setExtraData, data, index, setShowMain, lig
 
 function SearchedClickableThumbNail({ setExtraData, data, setShowMain, lightMode}) {
 
+    function handleKeyboard(e)
+    {
+        if(e.key === 'Enter' || e.key === ' ')
+        {
+            e.target.click()
+        }
+    }
     let popu = data['population']
     let popu2 = [];
     let count = 0;
@@ -90,7 +105,7 @@ function SearchedClickableThumbNail({ setExtraData, data, setShowMain, lightMode
     }
 
     return (
-        <section onClick={handleSwitchingMain} className='cursor-pointer grid grid-cols-1 grid-rows-2 rounded-[7px] shadow-md h-[23rem]'>
+        <section tabIndex={0} onKeyUp={handleKeyboard} onClick={handleSwitchingMain} className='cursor-pointer grid grid-cols-1 grid-rows-2 rounded-[7px] shadow-md h-[23rem]'>
             <div className="rounded-tl-[7px] rounded-tr-[7px] shadow-sm z-10">
                 <img alt="country's flag" className="h-full w-full rounded-tl-[7px] rounded-tr-[7px]" src={data['flags']['png']}></img>
             </div>

@@ -547,14 +547,14 @@
   .mb-\[1\.3rem\] {
     margin-bottom: 1.3rem;
   }
+  .mb-\[3rem\] {
+    margin-bottom: 3rem;
+  }
   .mb-\[20\%\] {
     margin-bottom: 20%;
   }
   .mb-\[2rem\] {
     margin-bottom: 2rem;
-  }
-  .mb-\[3rem\] {
-    margin-bottom: 3rem;
   }
   .ml-\[0\.2rem\] {
     margin-left: 0.2rem;
@@ -592,20 +592,11 @@
   .h-\[23rem\] {
     height: 23rem;
   }
-  .h-\[2rem\] {
-    height: 2rem;
-  }
   .h-full {
     height: 100%;
   }
   .w-\[1\.2rem\] {
     width: 1.2rem;
-  }
-  .w-\[2rem\] {
-    width: 2rem;
-  }
-  .w-\[5rem\] {
-    width: 5rem;
   }
   .w-\[7rem\] {
     width: 7rem;
@@ -618,6 +609,9 @@
   }
   .w-\[55\%\] {
     width: 55%;
+  }
+  .w-\[5rem\] {
+    width: 5rem;
   }
   .w-\[80\%\] {
     width: 80%;
@@ -714,13 +708,6 @@
   .rounded-bl-\[7px\] {
     border-bottom-left-radius: 7px;
   }
-  .border {
-    border-style: var(--tw-border-style);
-    border-width: 1px;
-  }
-  .border-red-500 {
-    border-color: var(--color-red-500);
-  }
   .bg-darkHeaderBg {
     background-color: var(--color-darkHeaderBg);
   }
@@ -789,10 +776,6 @@
   .text-sm {
     font-size: var(--text-sm);
     line-height: var(--tw-leading, var(--text-sm--line-height));
-  }
-  .text-xl {
-    font-size: var(--text-xl);
-    line-height: var(--tw-leading, var(--text-xl--line-height));
   }
   .text-\[1\.2rem\] {
     font-size: 1.2rem;
@@ -888,10 +871,37 @@
       }
     }
   }
+  .focus\:ring-2 {
+    &:focus {
+      --tw-ring-shadow: var(--tw-ring-inset,) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color, currentColor);
+      box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+    }
+  }
+  .focus\:outline-0 {
+    &:focus {
+      outline-style: var(--tw-outline-style);
+      outline-width: 0px;
+    }
+  }
   .focus\:outline-2 {
     &:focus {
       outline-style: var(--tw-outline-style);
       outline-width: 2px;
+    }
+  }
+  .focus\:outline-offset-5 {
+    &:focus {
+      outline-offset: 5px;
+    }
+  }
+  .focus\:outline-offset-\[3rem\] {
+    &:focus {
+      outline-offset: 3rem;
+    }
+  }
+  .focus\:outline-slate-100 {
+    &:focus {
+      outline-color: var(--color-slate-100);
     }
   }
   .focus\:outline-slate-200 {
@@ -1089,11 +1099,6 @@
   syntax: "*";
   inherits: false;
   initial-value: 0;
-}
-@property --tw-border-style {
-  syntax: "*";
-  inherits: false;
-  initial-value: solid;
 }
 @property --tw-leading {
   syntax: "*";

@@ -13,16 +13,15 @@ DropDownFilter.propTypes = {
     lightMode: PropTypes.bool
 }
 
-function DropDownFilter({setRegion, lightMode})
+function DropDownFilter({region, setRegion, lightMode})
 {
     function handleRegionSet(e){
         setRegion(e.target.value);
-        //console.log(region);
     }
     return(
-       <select onChange={handleRegionSet} className={lightMode ? 
-        "cursor-pointer w-[55%] mb-[2rem] lg:mg-[0px] lg:w-[17%] bg-white outline-none text-slate-800 shadow-md rounded-[5px] py-[0.7rem] lg:py-[0.8rem] px-[1%] font-semibold" 
-         : "cursor-pointer w-[55%] mb-[2rem] lg:mg-[0px] lg:w-[17%] bg-darkHeaderBg text-white outline-none shadow-md rounded-[5px] py-[0.7rem] lg:py-[0.8rem] px-[1%] font-semibold"}>
+       <select tabIndex={0} value={region} onChange={handleRegionSet} className={lightMode ? 
+        "cursor-pointer w-[55%] mb-[2rem] lg:mg-[0px] lg:w-[17%] bg-white outline-none text-slate-800 focus:outline-0 focus:ring-2 shadow-md rounded-[5px] py-[0.7rem] lg:py-[0.8rem] px-[1%] font-semibold" 
+         : "cursor-pointer w-[55%] mb-[2rem] lg:mg-[0px] lg:w-[17%] bg-darkHeaderBg focus:outline-0 focus:ring-2 text-white outline-none shadow-md rounded-[5px] py-[0.7rem] lg:py-[0.8rem] px-[1%] font-semibold"}>
         <option value=''>Filter by Region</option>
         <option value='africa'>Africa</option>
         <option value='america'>America</option>
